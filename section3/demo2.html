@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="../build/vue.js"></script>
+  </head>
+  <body>
+
+  <div id="example-2">
+    <ul>
+      <li v-for="value in object">
+        {{ value }}
+      </li>
+    </ul>
+
+    <div v-for="(value, key) in object">
+      {{ key }} : {{ value }}
+    </div>
+
+    <div v-for="(value, key, index) in object">
+      {{ index }}. {{ key }} : {{ value }}
+    </div>
+
+    <div>
+      <span v-for="n in 10">{{ n }}</span>
+    </div>
+  </div>
+
+    <script>
+    var example2 = new Vue({
+      el: '#example-2',
+      data: {
+        object: {
+          FirstName: 'John',
+          LastName: 'Doe',
+          Age: 30
+        }
+      }
+    })
+    </script>
+
+  </body>
+</html>
