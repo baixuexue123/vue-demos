@@ -9,6 +9,9 @@
   <div id="example-2">
     <!-- `greet` 是在下面定义的方法名 -->
     <button v-on:click="greet">Greet</button>
+    <button v-on:click="say('hi')">Say hi</button>
+    <button v-on:click="say('what')">Say what</button>
+    <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
   </div>
 
     <script>
@@ -24,7 +27,19 @@
           alert('Hello ' + this.name + '!')
           // `event` 是原生 DOM 事件
           alert(event.target.tagName)
+        },
+
+        say: function (message) {
+          alert(message)
+        },
+
+        warn: function (message, event) {
+          // 现在我们可以访问原生事件对象
+          if (event) event.preventDefault()
+          alert(message)
         }
+
+        // 更好的方式是：methods 只有纯粹的数据逻辑，而不是去处理 DOM 事件细节
       }
     })
   

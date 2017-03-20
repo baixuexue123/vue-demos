@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script src="../build/vue.js"></script>
+  </head>
+  <body>
+
+  <div id="example-5" class="demo">
+    <select v-model="selected">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <span>Selected: {{ selected }}</span>
+
+    <br>
+    <select v-model="selecteds" multiple style="width: 50px">
+      <option>A</option>
+      <option>B</option>
+      <option>C</option>
+    </select>
+    <br>
+    <span>Selecteds: {{ selecteds }}</span>
+  </div>
+
+    <script>
+    new Vue({
+      el: '#example-5',
+      data: {
+        selected: null,
+         selecteds: []
+      }
+    })
+    </script>
+
+  </body>
+</html>
