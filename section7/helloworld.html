@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../vendor/element-default.css">
+</head>
+<body>
+<div id="app">
+    <el-button @click="visible = true">按钮</el-button>
+    <el-dialog v-model="visible" title="Hello world">
+        <p>欢迎使用 Element</p>
+    </el-dialog>
+</div>
+</body>
+<script src="../vendor/vue.js"></script>
+<script src="../vendor/element.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: function() {
+            return { visible: false }
+        }
+    })
+</script>
+</html>
